@@ -1,0 +1,17 @@
+<수정 파일>
+network 폴더의 deeplab.py, modeling.py
+
+deeplab.py
+143 ~ 153번 째 줄
+rate4 추가
+aspp conv append 추가
+nn.conv2d 5-> 6 변경
+
+modeling.py
+37번째 줄
+[6,12,18] -> [6,12,18,24] 변경
+
+<추가해야할 사항>
+dataset SIA 폴더에 인공위성 사진이 안들어가 있습니다. 직접 추가해주세요!
+<쉘 명령어 >
+python main_sia_3.py --enable_vis --vis_port 28333 --lr 0.1 --gpu_id 0 --crop_size 512 --output_stride 16 --batch_size 8 --dataset satellites_multi --data_root ./datasets/data/SIA/multi --separable_conv
